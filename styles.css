@@ -83,34 +83,88 @@
     text-align: center;
   }
   
-  .about h2, .services h2, .contact h2 {
+  .about h2, .our-services h2, .contact h2 {
     margin-bottom: 2rem;
     font-size: 2.5rem;
     color: #333;
   }
-  
+  .our-services{
+    text-align: center;
+  }
+/* General container styling for Flexbox */
+.services  {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  justify-content: space-between; /* Adds spacing between items */
+}
+
+/* General styling for service items (desktop view) */
+.service-item {
+  flex: 0 1 30%; /* Items take 30% width on larger screens */
+  margin-bottom: 2rem; /* Spacing between items */
+  box-sizing: border-box;
+  text-align: center;
+  padding: 1rem; /* Optional padding for better spacing */
+}
+
+/* Icon styling */
+.service-item i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #547a59;
+}
+
+/* Service title */
+.service-item h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+  line-height: 1.3; /* Prevents text overlap */
+}
+
+/* Service description */
+.service-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Media query for smaller screens (tablets and phones) */
+@media only screen and (max-width: 768px) {
   .service-item {
-    display: inline-block;
-    width: 30%;
-    margin: 2rem 1%;
+      flex: 0 1 48%; /* Two columns on tablet */
+      margin-bottom: 2rem;
   }
-  
-  .service-item i {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #547a59;
-  }
-  
+
   .service-item h3 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    color: #333;
+      font-size: 1.25rem; /* Smaller font for mobile */
+      margin-bottom: 0.75rem;
   }
-  
+
   .service-item p {
-    font-size: 1rem;
-    color: #555;
+      font-size: 0.9rem;
   }
+
+  .service-item i {
+      font-size: 2.5rem; /* Slightly smaller icon */
+      margin-bottom: 0.75rem;
+  }
+}
+
+/* Media query for very small screens (phones) */
+@media only screen and (max-width: 480px) {
+  .service-item {
+      flex: 0 1 100%; /* Full width for mobile */
+      margin-bottom: 1.5rem;
+  }
+
+  .service-item h3 {
+      font-size: 1.1rem;
+  }
+
+  .service-item p {
+      font-size: 0.85rem;
+  }
+}
   
   .contact form {
     display: flex;
